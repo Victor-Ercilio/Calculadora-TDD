@@ -47,6 +47,17 @@ namespace Tests
         }
 
         [Test]
+        public void Divide_NumberByNonZeroNumber_ReturnsDivision()
+        {
+            Calculator calc = new Calculator();
+            double divisor = 1;
+            double dividend = 2;
+            double resultDivision;
+
+            resultDivision = calc.Divide(dividend, divisor);
+
+            Assert.That(resultDivision, Is.EqualTo(dividend/divisor));
+        }
 
     }
 }
