@@ -29,5 +29,10 @@ namespace Calculadora
         {
             return value1 * value2;
         }
+
+        public double Sub(double minuend, double subtrahend)
+        {
+            return minuend - subtrahend;
+        }
     }
 }
