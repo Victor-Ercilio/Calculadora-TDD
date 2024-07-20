@@ -8,6 +8,10 @@ namespace Calculadora
 {
     public class Calculator
     {
+        /// <summary>
+        /// Represents a calculator object, can performe adition,
+        /// subtraction, multiplication and division
+        /// </summary>
         public Calculator()
         {
 
@@ -34,7 +38,7 @@ namespace Calculadora
         }
 
         /// <summary>
-        /// Gets two numbers and return, if possible, the division between them
+        /// It gets two numbers and return, if possible, the division between them
         /// </summary>
         /// <param name="dividend">The number to be divided</param>
         /// <param name="divisor">The number that says in how many parts to divided</param>
@@ -47,11 +51,24 @@ namespace Calculadora
             return dividend / divisor;
         }
 
+        /// <summary>
+        /// It gets two numbers and return the multiplication of them
+        /// </summary>
+        /// <param name="value1">The first number</param>
+        /// <param name="value2">The second number</param>
+        /// <returns>The multiplication of the two numbers</returns>
         public double Multiply(double value1, double value2)
         {
             return value1 * value2;
         }
 
+        /// <summary>
+        /// It gets two numbers and return the subtraction of
+        /// the first by the second
+        /// <summary>
+        /// <param name="minuend">The number to be diminshed</param>
+        /// <param name="subtrahend">The number that is subtract</param>
+        /// <returns>Subtraction of the minuend by the subtrahend</returns>
         public double Sub(double minuend, double subtrahend)
         {
             return minuend - subtrahend;
