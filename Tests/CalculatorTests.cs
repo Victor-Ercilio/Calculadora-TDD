@@ -61,13 +61,13 @@ namespace Tests
         [Test]
         public void Multiply_TwoRandomNumbers_ReturnsMultiplicationOfThem()
         {
-            Calculator calculator = new Calculator();
+            Calculator calc = new Calculator();
             Random random = new Random();
             double firstNumber = random.NextDouble();
             double secondNumber = random.NextDouble();
             double multiplicantionResult = 0;
 
-            multiplicantionResult = calculator.Multiply(firstNumber, secondNumber);
+            multiplicantionResult = calc.Multiply(firstNumber, secondNumber);
 
             Assert.That(multiplicantionResult, Is.EqualTo(firstNumber * secondNumber));
         }
@@ -85,5 +85,26 @@ namespace Tests
 
             Assert.That(subtractionResult, Is.EqualTo(firstNumber - secondNumber));
         }
+
+        [Test]
+        public void Add_SumExceedsDoubleMaximumValue_ThrowsArithmeticException()
+        {
+            Calculator calc = new Calculator();
+
+            TestDelegate sum = () => calc.Add(double.MaxValue, 1);
+
+            _ = Assert.Throws<ArithmeticException>(sum);
+        }
+
+        [Test]
+        public void Add_SumExceedsDoubleMinimumValue_ThrowsArithmeticException()
+        {
+            Calculator calc = new Calculator();
+
+            TestDelegate sum = () => calc.Add(double.MinValue, -1);
+
+            _ = Assert.Throws<ArithmeticException>(sum);
+        }
+
     }
 }
