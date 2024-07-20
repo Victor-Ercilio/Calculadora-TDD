@@ -73,6 +73,18 @@ namespace Tests
             Assert.That(multiplicantionResult, Is.EqualTo(firstNumber * secondNumber));
         }
 
+        [Test]
+        public void Sub_TwoRandomNumbers_ReturnsSubtractionFirstBySecond()
+        {
+            Calculator calc = new Calculator();
+            Random random = new Random();
+            double firstNumber = random.NextDouble();
+            double secondNumber = random.NextDouble();
+            double subtractionResult = 0;
 
+            subtractionResult = calc.Sub(firstNumber, secondNumber);
+
+            Assert.That(subtractionResult, Is.EqualTo(firstNumber - secondNumber));
+        }
     }
 }
