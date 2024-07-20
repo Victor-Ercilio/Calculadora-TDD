@@ -59,5 +59,20 @@ namespace Tests
             Assert.That(resultDivision, Is.EqualTo(dividend/divisor));
         }
 
+        [Test]
+        public void Multiply_TwoRandomNumbers_ReturnsMultiplication()
+        {
+            Calculator calculator = new Calculator();
+            Random random = new Random();
+            double firstNumber = random.NextDouble();
+            double secondNumber = random.NextDouble();
+            double multiplicantionResult = 0;
+
+            multiplicantionResult = calculator.Multiply(firstNumber, secondNumber);
+
+            Assert.That(multiplicantionResult, Is.EqualTo(firstNumber * secondNumber));
+        }
+
+
     }
 }
