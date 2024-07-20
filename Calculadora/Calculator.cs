@@ -24,5 +24,10 @@ namespace Calculadora
                 throw new DivideByZeroException();
             return dividend / divisor;
         }
+
+        public double Multiply(double value1, double value2)
+        {
+            return value1 * value2;
+        }
     }
 }
