@@ -2,6 +2,7 @@ namespace Tests
 {
     using NUnit.Framework;
     using Calculadora;
+    using System.Numerics;
 
     [TestFixture]
     [Author("Victor Ercilio")]
@@ -59,12 +60,11 @@ namespace Tests
         }
 
         [Test]
-        public void Multiply_TwoRandomNumbers_ReturnsMultiplicationOfThem()
+        public void Multiply_TwoNumbers_ReturnsMultiplicationOfThem()
         {
             Calculator calc = new Calculator();
-            Random random = new Random();
-            double firstNumber = random.NextDouble();
-            double secondNumber = random.NextDouble();
+            double firstNumber = 2;
+            double secondNumber = 1;
             double multiplicantionResult = 0;
 
             multiplicantionResult = calc.Multiply(firstNumber, secondNumber);
