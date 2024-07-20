@@ -33,6 +33,13 @@ namespace Calculadora
             return value1 + value2;
         }
 
+        /// <summary>
+        /// Gets two numbers and return, if possible, the division between them
+        /// </summary>
+        /// <param name="dividend">The number to be divided</param>
+        /// <param name="divisor">The number that says in how many parts to divided</param>
+        /// <returns>A number that is one part of the total</returns>
+        /// <exception cref="DivideByZeroException"></exception>
         public double Divide(double dividend, double divisor)
         {
             if(divisor == 0)
