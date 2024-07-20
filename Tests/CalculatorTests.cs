@@ -60,7 +60,7 @@ namespace Tests
         }
 
         [Test]
-        public void Multiply_TwoRandomNumbers_ReturnsMultiplication()
+        public void Multiply_TwoRandomNumbers_ReturnsMultiplicationOfThem()
         {
             Calculator calculator = new Calculator();
             Random random = new Random();
