@@ -19,7 +19,6 @@ namespace Tests
 
             calc = new Calculator();
 
-            Assert.That(calc, Is.Not.Null);
             Assert.That(calc, Is.InstanceOf<Calculator>());
         }
 
