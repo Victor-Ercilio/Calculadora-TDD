@@ -86,6 +86,21 @@ namespace Tests
             Assert.That(actual, Is.EqualTo(expected));
         }
 
+        [Test]
+        public void Multiply_MultiplicationExceedsMaxiumDouble_ThrowsArithmethicExcepion()
+        {
+            TestDelegate actual = () => Calculator.Multiply(10, double.MaxValue);
+
+            Assert.Throws<ArithmeticException>(actual);
+        }
+
+        [Test]
+        public void Multiply_MultiplicationExceedsMinimunDouble_ThrowsArithmethicExcepion()
+        {
+            TestDelegate actual = () => Calculator.Multiply(-10, double.MinValue);
+
+            Assert.Throws<ArithmeticException>(actual);
+        }
         #endregion
 
         #region Method Sub
