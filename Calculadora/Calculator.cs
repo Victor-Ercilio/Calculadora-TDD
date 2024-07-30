@@ -84,5 +84,24 @@ namespace Calculadora
             
             return minuend - subtrahend;
         }
+
+        public static int[] Fibonacci(int numbers)
+        {
+            if (numbers < 0)
+                throw new ArgumentException("Fibonnaci numbers should not be negative");
+
+            int[] result = new int[numbers];
+
+            if(numbers >= 1)
+                result[0] = 0;
+
+            if (numbers >= 2)
+                result[1] = 1;
+
+            for(int i = 2; i < numbers; i++)
+                result[i] = result[i-1] + result[i-2];
+
+            return result;
+        }
     }
 }
