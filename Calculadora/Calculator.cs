@@ -23,9 +23,11 @@ namespace Calculadora
             if(value1 > 0 && value2 > 0 && 
                 (double.MaxValue - value1) < value2)
                 throw new ArithmeticException("Exceeds double maximum value");
+            
             if(value1 < 0 && value2 < 0 && 
                 (double.MinValue - value1) > value2)
                 throw new ArithmeticException("Exceeds double minimum value");
+            
             return value1 + value2;
         }
 
@@ -40,6 +42,7 @@ namespace Calculadora
         {
             if(divisor == 0)
                 throw new DivideByZeroException();
+
             return dividend / divisor;
         }
 
@@ -49,9 +52,17 @@ namespace Calculadora
         /// <param name="value1">The first number</param>
         /// <param name="value2">The second number</param>
         /// <returns>The multiplication of the two numbers</returns>
-        public static double Multiply(double value1, double value2)
+        public static double Multiply(double num1, double num2)
         {
-            return value1 * value2;
+            double result = num1 * num2;
+            
+            if(double.IsPositiveInfinity(result))
+                throw new ArithmeticException("Exceeds double maximum value");
+            
+            if(double.IsNegativeInfinity(result))
+                throw new ArithmeticException("Exceeds double minimum value");
+            
+            return result;
         }
 
         /// <summary>
@@ -66,9 +77,11 @@ namespace Calculadora
             if (minuend > 0 && subtrahend < 0 &&
                 (double.MaxValue - minuend) < -subtrahend)
                 throw new ArithmeticException("Exceeds double maximum value");
+
             if (minuend < 0 && subtrahend > 0 &&
                 (double.MinValue - minuend) > -subtrahend)
                 throw new ArithmeticException("Exceeds double minimum value");
+            
             return minuend - subtrahend;
         }
     }
