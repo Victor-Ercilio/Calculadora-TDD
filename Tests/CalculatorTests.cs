@@ -28,22 +28,15 @@ namespace Tests
         [TestCase(0, 1, 1)]
         public void Add_AddTwoNumbers_ReturnsCorrectvalue(double first, double second, double expected)
         {
-            Calculator calc = new Calculator();
-            double firstNumber = 1;
-            double secondNumber = 2;
-            double sumResult;
-
-            sumResult = calc.Add(firstNumber, secondNumber);
+            double actual = Calculator.Add(first, second);
             
-            Assert.That(sumResult, Is.EqualTo(firstNumber + secondNumber));
+            Assert.That(actual, Is.EqualTo(expected));
         }
 
         [Test]
         public void Divide_NumberDividedByZero_ThrowsDivideByZeroException()
         {
-            Calculator calc = new Calculator();
-
-            TestDelegate division = () => calc.Divide(3, 0);
+            TestDelegate division = () => Calculator.Divide(1, 0);
 
             _ = Assert.Throws<DivideByZeroException>(division);
         }
@@ -53,14 +46,9 @@ namespace Tests
         [TestCase(9, 3, 3)]
         public void Divide_NumberByNonZeroNumber_ReturnsCorrectValue(double dividend, double divisor, double expected)
         {
-            Calculator calc = new Calculator();
-            double divisor = 1;
-            double dividend = 2;
-            double resultDivision;
+            double actual = Calculator.Divide(dividend, divisor);
 
-            resultDivision = calc.Divide(dividend, divisor);
-
-            Assert.That(resultDivision, Is.EqualTo(dividend/divisor));
+            Assert.That(actual, Is.EqualTo(expected));
         }
 
         [TestCase(1, 2, 2)]
@@ -68,14 +56,9 @@ namespace Tests
         [TestCase(2, -3, -6)]
         public void Multiply_TwoNumbers_ReturnsCorrectValue(double firstNumber, double secondNumber, double expected)
         {
-            Calculator calc = new Calculator();
-            double firstNumber = 2;
-            double secondNumber = 1;
-            double multiplicantionResult = 0;
+            double actual = Calculator.Multiply(firstNumber, secondNumber);
 
-            multiplicantionResult = calc.Multiply(firstNumber, secondNumber);
-
-            Assert.That(multiplicantionResult, Is.EqualTo(firstNumber * secondNumber));
+            Assert.That(actual, Is.EqualTo(expected));
         }
 
         [TestCase(1, 2, -1)]
@@ -83,23 +66,15 @@ namespace Tests
         [TestCase(2, 1, 1)]
         public void Sub_TwoRandomNumbers_ReturnsCorrectValue(double minuend, double subtrahend, double expected)
         {
-            Calculator calc = new Calculator();
-            Random random = new Random();
-            double firstNumber = random.NextDouble();
-            double secondNumber = random.NextDouble();
-            double subtractionResult = 0;
+            double actual = Calculator.Sub(minuend, subtrahend);
 
-            subtractionResult = calc.Sub(firstNumber, secondNumber);
-
-            Assert.That(subtractionResult, Is.EqualTo(firstNumber - secondNumber));
+            Assert.That(actual, Is.EqualTo(expected));
         }
 
         [Test]
         public void Add_SumExceedsDoubleMaximumValue_ThrowsArithmeticException()
         {
-            Calculator calc = new Calculator();
-
-            TestDelegate sum = () => calc.Add(double.MaxValue, 1);
+            TestDelegate sum = () => Calculator.Add(double.MaxValue, 1);
 
             _ = Assert.Throws<ArithmeticException>(sum);
         }
@@ -107,9 +82,7 @@ namespace Tests
         [Test]
         public void Add_SumExceedsDoubleMinimumValue_ThrowsArithmeticException()
         {
-            Calculator calc = new Calculator();
-
-            TestDelegate sum = () => calc.Add(double.MinValue, -1);
+            TestDelegate sum = () => Calculator.Add(double.MinValue, -1);
 
             _ = Assert.Throws<ArithmeticException>(sum);
         }
