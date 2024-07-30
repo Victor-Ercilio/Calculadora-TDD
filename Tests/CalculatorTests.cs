@@ -23,8 +23,10 @@ namespace Tests
             Assert.That(calc, Is.InstanceOf<Calculator>());
         }
 
-        [Test]
-        public void Add_AddTwoNumbers_ReturnsSumOfThem()
+        [TestCase(1, 2, 3)]
+        [TestCase(-2, 1, -1)]
+        [TestCase(0, 1, 1)]
+        public void Add_AddTwoNumbers_ReturnsCorrectvalue(double first, double second, double expected)
         {
             Calculator calc = new Calculator();
             double firstNumber = 1;
@@ -46,8 +48,10 @@ namespace Tests
             _ = Assert.Throws<DivideByZeroException>(division);
         }
 
-        [Test]
-        public void Divide_NumberByNonZeroNumber_ReturnsDivision()
+        [TestCase(4, 2, 2)]
+        [TestCase(2, 1, 2)]
+        [TestCase(9, 3, 3)]
+        public void Divide_NumberByNonZeroNumber_ReturnsCorrectValue(double dividend, double divisor, double expected)
         {
             Calculator calc = new Calculator();
             double divisor = 1;
@@ -59,8 +63,10 @@ namespace Tests
             Assert.That(resultDivision, Is.EqualTo(dividend/divisor));
         }
 
-        [Test]
-        public void Multiply_TwoNumbers_ReturnsMultiplicationOfThem()
+        [TestCase(1, 2, 2)]
+        [TestCase(0, 2, 0)]
+        [TestCase(2, -3, -6)]
+        public void Multiply_TwoNumbers_ReturnsCorrectValue(double firstNumber, double secondNumber, double expected)
         {
             Calculator calc = new Calculator();
             double firstNumber = 2;
@@ -72,8 +78,10 @@ namespace Tests
             Assert.That(multiplicantionResult, Is.EqualTo(firstNumber * secondNumber));
         }
 
-        [Test]
-        public void Sub_TwoRandomNumbers_ReturnsSubtractionFirstBySecond()
+        [TestCase(1, 2, -1)]
+        [TestCase(2, 2, 0)]
+        [TestCase(2, 1, 1)]
+        public void Sub_TwoRandomNumbers_ReturnsCorrectValue(double minuend, double subtrahend, double expected)
         {
             Calculator calc = new Calculator();
             Random random = new Random();
