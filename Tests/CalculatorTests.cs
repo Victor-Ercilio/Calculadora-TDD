@@ -131,5 +131,32 @@ namespace Tests
         }
 
         #endregion
+
+        #region Method Fibonnaci
+        [TestCase(0, new int[0])]
+        [TestCase(1, new int[1] {0})]
+        [TestCase(2, new int[2] {0, 1})]
+        [TestCase(3, new int[3] {0, 1, 1})]
+        [TestCase(4, new int[4] {0, 1, 1, 2})]
+        public void Fibonacci_ValidNumber_ReturnsExpectedArray(int numbers, int[] expected)
+        {
+            int[] actual;
+
+            actual = Calculator.Fibonacci(numbers);
+
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void Fibonacci_InvalidNumber_ThrowsArgumentException()
+        {
+            int numbers = -1;
+
+            TestDelegate actual = () => Calculator.Fibonacci(numbers);
+
+            Assert.Throws<ArgumentException>(actual);
+        }
+
+        #endregion
     }
 }
