@@ -18,7 +18,7 @@ namespace Calculadora
         /// <exception cref="ArithmeticException">
         /// If the sum of the values exceeds the maximum or minimum double values
         /// </exception>
-        public double Add(double value1, double value2)
+        public static double Add(double value1, double value2)
         {
             if(value1 > 0 && value2 > 0 && 
                 (double.MaxValue - value1) < value2)
@@ -36,7 +36,7 @@ namespace Calculadora
         /// <param name="divisor">The number that says in how many parts to divided</param>
         /// <returns>A number that is one part of the total</returns>
         /// <exception cref="DivideByZeroException"></exception>
-        public double Divide(double dividend, double divisor)
+        public static double Divide(double dividend, double divisor)
         {
             if(divisor == 0)
                 throw new DivideByZeroException();
@@ -49,7 +49,7 @@ namespace Calculadora
         /// <param name="value1">The first number</param>
         /// <param name="value2">The second number</param>
         /// <returns>The multiplication of the two numbers</returns>
-        public double Multiply(double value1, double value2)
+        public static double Multiply(double value1, double value2)
         {
             return value1 * value2;
         }
@@ -61,7 +61,7 @@ namespace Calculadora
         /// <param name="minuend">The number to be diminshed</param>
         /// <param name="subtrahend">The number that is subtract</param>
         /// <returns>Subtraction of the minuend by the subtrahend</returns>
-        public double Sub(double minuend, double subtrahend)
+        public static double Sub(double minuend, double subtrahend)
         {
             return minuend - subtrahend;
         }
