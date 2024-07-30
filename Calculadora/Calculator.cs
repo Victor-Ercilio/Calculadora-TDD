@@ -8,15 +8,7 @@ namespace Calculadora
 {
     public class Calculator
     {
-        /// <summary>
-        /// Represents a calculator object, can performe adition,
-        /// subtraction, multiplication and division
-        /// </summary>
-        public Calculator()
-        {
 
-        }
-        
         /// <summary>
         /// It gets two double precision numbers and returns the sum of them
         /// </summary>
