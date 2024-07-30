@@ -82,17 +82,17 @@ namespace Tests
         }
 
         [Test]
-        public void Add_SumExceedsDoubleMaximumValue_ThrowsArithmeticException()
+        public void Sub_SumExceedsDoubleMaximumValue_ThrowsArithmeticException()
         {
-            TestDelegate sum = () => Calculator.Add(double.MaxValue, 1);
+            TestDelegate sum = () => Calculator.Sub(double.MaxValue, -1);
 
             _ = Assert.Throws<ArithmeticException>(sum);
         }
 
         [Test]
-        public void Add_SumExceedsDoubleMinimumValue_ThrowsArithmeticException()
+        public void Sub_SumExceedsDoubleMinimumValue_ThrowsArithmeticException()
         {
-            TestDelegate sum = () => Calculator.Add(double.MinValue, -1);
+            TestDelegate sum = () => Calculator.Sub(double.MinValue, 1);
 
             _ = Assert.Throws<ArithmeticException>(sum);
         }
