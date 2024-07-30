@@ -13,6 +13,7 @@ namespace Tests
         {
         }
 
+        #region Constructor
         [Test]
         public void EmptyConstructor_ReturnsCalculatorObject()
         {
@@ -23,6 +24,9 @@ namespace Tests
             Assert.That(calc, Is.InstanceOf<Calculator>());
         }
 
+        #endregion
+
+        #region Method Add
         [TestCase(1, 2, 3)]
         [TestCase(-2, 1, -1)]
         [TestCase(0, 1, 1)]
@@ -51,6 +55,9 @@ namespace Tests
             Assert.That(actual, Is.EqualTo(expected));
         }
 
+        #endregion
+
+        #region Method Multiply
         [TestCase(1, 2, 2)]
         [TestCase(0, 2, 0)]
         [TestCase(2, -3, -6)]
@@ -61,6 +68,9 @@ namespace Tests
             Assert.That(actual, Is.EqualTo(expected));
         }
 
+        #endregion
+
+        #region Method Sub
         [TestCase(1, 2, -1)]
         [TestCase(2, 2, 0)]
         [TestCase(2, 1, 1)]
@@ -87,5 +97,6 @@ namespace Tests
             _ = Assert.Throws<ArithmeticException>(sum);
         }
 
+        #endregion
     }
 }
