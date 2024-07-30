@@ -38,6 +38,24 @@ namespace Tests
         }
 
         [Test]
+        public void Add_SumExceedsDoubleMaximumValue_ThrowsArithmeticException()
+        {
+            TestDelegate sum = () => Calculator.Add(double.MaxValue, 1);
+
+            _ = Assert.Throws<ArithmeticException>(sum);
+        }
+
+        [Test]
+        public void Add_SumExceedsDoubleMinimumValue_ThrowsArithmeticException()
+        {
+            TestDelegate sum = () => Calculator.Add(double.MinValue, -1);
+
+            _ = Assert.Throws<ArithmeticException>(sum);
+        }
+        #endregion
+
+        #region Method Divide
+        [Test]
         public void Divide_NumberDividedByZero_ThrowsDivideByZeroException()
         {
             TestDelegate division = () => Calculator.Divide(1, 0);
