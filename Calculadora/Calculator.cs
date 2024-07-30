@@ -24,7 +24,7 @@ namespace Calculadora
                 (double.MaxValue - value1) < value2)
                 throw new ArithmeticException("Exceeds double maximum value");
             if(value1 < 0 && value2 < 0 && 
-                (double.MinValue - 1) < value2)
+                (double.MinValue - value1) > value2)
                 throw new ArithmeticException("Exceeds double minimum value");
             return value1 + value2;
         }
@@ -63,6 +63,12 @@ namespace Calculadora
         /// <returns>Subtraction of the minuend by the subtrahend</returns>
         public static double Sub(double minuend, double subtrahend)
         {
+            if (minuend > 0 && subtrahend < 0 &&
+                (double.MaxValue - minuend) < -subtrahend)
+                throw new ArithmeticException("Exceeds double maximum value");
+            if (minuend < 0 && subtrahend > 0 &&
+                (double.MinValue - minuend) > -subtrahend)
+                throw new ArithmeticException("Exceeds double minimum value");
             return minuend - subtrahend;
         }
     }
