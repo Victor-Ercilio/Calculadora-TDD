@@ -8,7 +8,7 @@ namespace Calculadora
 {
     public class Calculator
     {
-
+        
         /// <summary>
         /// It gets two double precision numbers and returns the sum of them
         /// </summary>

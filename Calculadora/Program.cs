@@ -4,7 +4,6 @@
     {
         static void Main(string[] args)
         {
-            Calculator calc = new();
             ConsoleKeyInfo response;
 
             do
@@ -24,19 +23,19 @@
                     {
                         case ConsoleKey.Add:
                             Console.WriteLine(
-                                $"{firstNumber} + {secondNumber} = {calc.Add(firstNumber, secondNumber)}");
+                                $"{firstNumber} + {secondNumber} = {Calculator.Add(firstNumber, secondNumber)}");
                             break;
                         case ConsoleKey.Subtract:
                             Console.WriteLine(
-                                $"{firstNumber} - {secondNumber} = {calc.Sub(firstNumber, secondNumber)}");
+                                $"{firstNumber} - {secondNumber} = {Calculator.Sub(firstNumber, secondNumber)}");
                             break;
                         case ConsoleKey.Multiply:
                             Console.WriteLine(
-                                $"{firstNumber} * {secondNumber} = {calc.Multiply(firstNumber, secondNumber)}");
+                                $"{firstNumber} * {secondNumber} = {Calculator.Multiply(firstNumber, secondNumber)}");
                             break;
                         case ConsoleKey.Divide:
                             Console.WriteLine(
-                                $"{firstNumber} / {secondNumber} = {calc.Divide(firstNumber, secondNumber)}");
+                                $"{firstNumber} / {secondNumber} = {Calculator.Divide(firstNumber, secondNumber)}");
                             break;
                         default:
                             Console.WriteLine("Operação não disponível");
@@ -54,6 +53,7 @@
                 
                 Console.Write("Repetir (S/N)? ");
                 response = Console.ReadKey();
+                Console.WriteLine();
                 Console.WriteLine();
             } while (response.Key == ConsoleKey.S);
         }
