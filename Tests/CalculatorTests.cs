@@ -158,5 +158,113 @@ namespace Tests
         }
 
         #endregion
+
+        #region IsEven
+        [Test]
+        public void IsEven_EvenNumber_ReturnsTrue()
+        {
+            int number = 2;
+            bool actual;
+            bool expected = true;
+
+            actual = Calculator.IsEven(number);
+
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void IsEven_OddNumber_ReturnsFalse()
+        {
+            int number = 1;
+            bool actual;
+            bool expected = false;
+
+            actual = Calculator.IsEven(number);
+
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+        #endregion
+
+        #region IsOdd
+        [Test]
+        public void IsOdd_EvenNumber_ReturnsFalse()
+        {
+            int number = 2;
+            bool actual;
+            bool expected = false;
+
+            actual = Calculator.IsOdd(number);
+
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void IsOdd_OddNumber_Returnstrue()
+        {
+            int number = 1;
+            bool actual;
+            bool expected = true;
+
+            actual = Calculator.IsOdd(number);
+
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+        #endregion
+
+        #region IsPrime
+
+        [TestCase(2)]
+        [TestCase(3)]
+        [TestCase(5)]
+        [TestCase(7)]
+        [TestCase(11)]
+        [TestCase(13)]
+        public void IsPrime_GetPrimeNumber_ReturnsTrue(int number)
+        {
+            bool actual;
+            bool expected = true;
+
+            actual = Calculator.IsPrime(number);
+
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+
+        [TestCase(4)]
+        [TestCase(6)]
+        [TestCase(10)]
+        [TestCase(18)]
+        public void IsPrime_GetCompositeNumber_ReturnsTrue(int number)
+        {
+            bool actual;
+            bool expected = false;
+
+            actual = Calculator.IsPrime(number);
+
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void IsPrime_GetNegativeNumber_ThrowsArgumentException()
+        {
+            int number = -1;
+            TestDelegate actual = () => Calculator.IsPrime(number);
+
+            Assert.Throws<ArgumentException>(actual);
+        }
+
+        [Test]
+        public void IsPrime_GetZeroNumber_ReturnFalse()
+        {
+            int number = 0;
+            bool actual;
+            bool expected = false;
+
+            actual = Calculator.IsPrime(number);
+
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+        #endregion
+
     }
 }
