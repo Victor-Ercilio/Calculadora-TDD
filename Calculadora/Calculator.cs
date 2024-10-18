@@ -103,5 +103,32 @@ namespace Calculadora
 
             return result;
         }
+
+        public static bool IsEven(int number)
+        {
+            return number % 2 == 0;
+        }
+
+        public static bool IsOdd(int number)
+        {
+            return number % 2 != 0;
+        }
+
+        public static bool IsPrime(int number)
+        {
+            if (number < 0)
+                throw new ArgumentException("Expected positive number.");
+
+            if (IsEven(number))
+                return ((number == 2) ? true : false);
+            return _IsPrime(number, number - 2);
+        }
+
+        private static bool _IsPrime(int number, int divisor)
+        {
+            if (divisor == 1) return true;
+            if (number % divisor == 0) return false;
+            return _IsPrime(number, divisor - 2);
+        }
     }
 }
