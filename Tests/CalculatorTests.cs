@@ -264,6 +264,18 @@ namespace Tests
 
             Assert.That(actual, Is.EqualTo(expected));
         }
+
+        [Test]
+        public void IsPrime_GetNumberOne_ReturnsFalse()
+        {
+            int number = 1;
+            bool actual;
+            bool expected = false;
+
+            actual = Calculator.IsPrime(number);
+
+            Assert.That(actual, Is.EqualTo(expected));
+        }
         #endregion
 
     }
