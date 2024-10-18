@@ -254,7 +254,7 @@ namespace Tests
         }
 
         [Test]
-        public void IsPrime_GetZeroNumber_ReturnFalse()
+        public void IsPrime_GetNumberZero_ReturnFalse()
         {
             int number = 0;
             bool actual;
